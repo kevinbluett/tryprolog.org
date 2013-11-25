@@ -55,6 +55,7 @@ var Loader = function(){
 					term.resume();
 				} catch(e) {
 					term.error(new String(e));
+					term.resume();
 				}
 			} else {
 				term.echo('');
@@ -74,10 +75,15 @@ var Loader = function(){
 				overlayOpacity: 0.2,
 				overlayColor: "#333",
 				overlayClose: true,
-				closeOnEscape: true
+				closeOnEscape: true,
+				onClose: function(myModal){
+					$(myModal).append('Closed!');
+				}
 			});
+			// The "skip to interpreter" button.
 			$(selectors.overlay_close_trigger).click(function(){
 				$(selectors.overlay).trigger('closeModal');
+				term.focus();
 			});
 		});
 	};
