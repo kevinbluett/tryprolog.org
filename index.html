@@ -1,0 +1,104 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>TryProlog.org - A Short Introduction to Prolog</title>
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/base-min.css">
+		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
+		<link href="css/jquery.terminal.css" rel="stylesheet"/>
+		<link href="css/style.css" rel="stylesheet"/>
+	</head>
+	<body>
+
+		<section>
+			<!-- Styled editor on left handside. -->
+			<pre name="rules" id="editor"></pre>
+			
+			<!-- Styled terminal on right handside -->
+			<div id="terminal">
+			
+			<div style="" type="text" name="query" id="console"></div>
+				
+			<div id="credits">
+				<small>TryProlog.org by <a href="http://www.twitter.com/kevinbluett">@kevinbluett</a>/<a href="http://www.kev.sh">kev.sh</a>. Kudos to <a href="http://ioctl.org/logic/prolog-latest">Jan</a> for the JS Prolog interpreter. Thanks to <a href="http://tryruby.org">TryRuby.org</a> for the inspiration.</small>
+			</div>
+			
+			<!-- This is checkbox is a fun little option - use your developer 
+				console to enable it as checked and you'll be able to see 
+				debug output from the prolog interpreter in the terminal. -->
+			<div class="hide"><input type="checkbox" id="showparse" /> Enable Debug Mode</div></div>
+			
+			<!-- Somewhere to store the STL before the prolog interpreter loads it. -->
+			<textarea cols="90" rows="40" id="stl" class="hide"></textarea>
+		</section>
+		<!-- This overlay is shown when the the page is initially loaded. 
+			TODO: Don't show overlay if just a page refresh. -->
+		<div id="welcome_overlay">
+			<h1 class="modal_heading">TryProlog.org</h1>
+			<div class="pure-g-r">
+			    <div class="pure-u-1-2">
+					<div class="l-box">
+			        	<h3>Prolog Tutorial</h3>
+						<p>2 lessons introducing you to the very basics of prolog, based on the book "Learn Prolog Now".</p>
+					</div>
+			    </div>
+			    <div class="pure-u-1-2">
+					<div class="l-box">
+			        	<h3>Features</h3>
+						<ul>
+							<li>Interactive tutorial based on exercises from <a href="learnprolognow.org">LearnPrologNow.org</a>.</li>
+							<li>A clientside Javascript Prolog interpreter.</li>
+						</ul>
+					</div>
+			   	</div>
+			</div>
+			<div class="pure-g-r">
+				<div class="pure-u-1-2">
+					<div class="b-box">
+						<a class="pure-button pure-button-primary closemodal" href="#">Let's Go</a>
+					</div>
+				</div>
+				<div class="pure-u-1-2">
+					<div class="b-box">
+						<a class="pure-button closemodal" href="#">Skip To Interpreter</a>
+					</div>
+				</div>
+			</div>
+			<div class="center"><br /><small>A little side project by <a href="http://kev.sh">Kevin</a></small></div>
+		</div>
+			
+		<!-- CDN jQuery -->
+		<script text="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		
+		<!-- Local third party Javascript -->
+		<script src="src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.terminal-0.7.8.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easyModal.js"></script>
+		
+		<!-- And it's roooolllll!!!!! -->
+		<script src="js/prolog.prepare.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/loader.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		<!--
+			var loader = new Loader();
+
+			$(function() {
+				loader.init();
+			});
+		-->
+		</script>
+		<!-- Prolog.js needs a rewrite to be class based and loaded in correctly.
+			 For now it needs to be loaded after the loader var has been intialised. -->
+		<script type="text/javascript" src="js/prolog.js"></script>
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-45969916-1', 'tryprolog.org');
+		  ga('send', 'pageview');
+		</script>
+	</body>
+</html>
