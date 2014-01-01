@@ -4,7 +4,8 @@ var Loader = function(){
 	var that = this;
 	var editor;
 	var prolog;
-	
+	var terminal; 
+
 	var text = {
 		terminal_greeting: "[[b;#000;#00ee11] Basic Prolog Interpreter ]\nNote: Facts are auto-magically reloaded when a new command is run."
 	}
@@ -45,7 +46,9 @@ var Loader = function(){
 	};
 
 	this.prepareTerminal = function(){
-		$(selectors.console).terminal(function(command, term) {
+		that.terminal = $(selectors.console);
+
+		that.terminal.terminal(function(command, term) {
 			if (command !== '') {
 				try {
 					term.pause();
@@ -63,7 +66,7 @@ var Loader = function(){
 		}, {
 			greetings: text.terminal_greeting,
 			name: 'js_demo',
-			height: $(selectors.page).height()-40,
+			height: $(selectors.page).height(),
 			prompt: '?- '
 		});
 	};
@@ -77,16 +80,22 @@ var Loader = function(){
 				overlayClose: true,
 				closeOnEscape: true,
 				onClose: function(myModal){
-					$(myModal).append('Closed!');
+					that.startTutorial();
 				}
 			});
 			// The "skip to interpreter" button.
 			$(selectors.overlay_close_trigger).click(function(){
 				$(selectors.overlay).trigger('closeModal');
-				term.focus();
+				$(selectors.console).focus();
 			});
 		});
 	};
+
+	this.startTutorial = function() {
+		var tutorial = new Tutorial();
+		console.log("Starting tutorial...");
+		tutorial.init(that);
+	}
 	
 	/**
 	 * This function loads the prolog Mini-STL and prepares it for use and loads the basic lessons in as well.

@@ -19,10 +19,6 @@
 			<div id="terminal">
 			
 			<div style="" type="text" name="query" id="console"></div>
-				
-			<div id="credits">
-				<small>TryProlog.org by <a href="http://www.twitter.com/kevinbluett">@kevinbluett</a>/<a href="http://www.kev.sh">kev.sh</a>. Kudos to <a href="http://ioctl.org/logic/prolog-latest">Jan</a> for the JS Prolog interpreter. Thanks to <a href="http://tryruby.org">TryRuby.org</a> for the inspiration.</small>
-			</div>
 			
 			<!-- This is checkbox is a fun little option - use your developer 
 				console to enable it as checked and you'll be able to see 
@@ -32,6 +28,9 @@
 			<!-- Somewhere to store the STL before the prolog interpreter loads it. -->
 			<textarea cols="90" rows="40" id="stl" class="hide"></textarea>
 		</section>
+		<div class="tutorial">
+			Tutorial Popup.
+		</div>
 		<!-- This overlay is shown when the the page is initially loaded. 
 			TODO: Don't show overlay if just a page refresh. -->
 		<div id="welcome_overlay">
@@ -67,6 +66,10 @@
 			</div>
 			<div class="center"><br /><small>A little side project by <a href="http://kev.sh">Kevin</a></small></div>
 		</div>
+
+		<div id="credits">
+			<small>TryProlog.org by <a href="http://www.twitter.com/kevinbluett">@kevinbluett</a>/<a href="http://www.kev.sh">kev.sh</a>. Kudos to <a href="http://ioctl.org/logic/prolog-latest">Jan</a> for the JS Prolog interpreter. Thanks to <a href="http://tryruby.org">TryRuby.org</a> for the inspiration.</small>
+		</div>
 			
 		<!-- CDN jQuery -->
 		<script text="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -78,6 +81,7 @@
 		
 		<!-- And it's roooolllll!!!!! -->
 		<script src="js/prolog.prepare.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/tutorial.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/loader.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 		<!--
