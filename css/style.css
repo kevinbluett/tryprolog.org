@@ -37,7 +37,35 @@ section {
 }
 .tutorial {
 	display:none;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: #fff;
+	border-top: 2px solid #cf6a4c;
+	z-index: 100;
 }
+
+.lesson {
+	padding: 0 10px 10px 10px;
+}
+
+#dragbar {
+	background-color: #cf6a4c;
+	height: 3px;
+	width: 100%;
+  	cursor: row-resize;
+}
+
+#ghostbar{
+	height: 3px;
+	width:100%;
+    background-color:#000;
+    opacity:0.5;
+    display: block;
+    position:absolute;
+    cursor: row-resize;
+    z-index:999}
+
 #credits {
 	position: fixed;
 	width: 50%;

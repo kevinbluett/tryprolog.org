@@ -28,9 +28,6 @@
 			<!-- Somewhere to store the STL before the prolog interpreter loads it. -->
 			<textarea cols="90" rows="40" id="stl" class="hide"></textarea>
 		</section>
-		<div class="tutorial">
-			Tutorial Popup.
-		</div>
 		<!-- This overlay is shown when the the page is initially loaded. 
 			TODO: Don't show overlay if just a page refresh. -->
 		<div id="welcome_overlay">
@@ -66,7 +63,19 @@
 			</div>
 			<div class="center"><br /><small>A little side project by <a href="http://kev.sh">Kevin</a></small></div>
 		</div>
-
+		<div class="tutorial">
+			<div id="dragbar"></div>
+			<div class="lesson">
+				<h1>Tutorial Heading</h1>
+				<p>Tutorial Content</p>
+				<div class="b-box">
+					<a class="pure-button previous-step" href="#">Previous Step</a>
+				</div>
+				<div class="b-box">
+					<a class="pure-button next-step" href="#">Next Step</a>
+				</div>
+			</div>
+		</div>
 		<div id="credits">
 			<small>TryProlog.org by <a href="http://www.twitter.com/kevinbluett">@kevinbluett</a>/<a href="http://www.kev.sh">kev.sh</a>. Kudos to <a href="http://ioctl.org/logic/prolog-latest">Jan</a> for the JS Prolog interpreter. Thanks to <a href="http://tryruby.org">TryRuby.org</a> for the inspiration.</small>
 		</div>
